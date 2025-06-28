@@ -52,11 +52,11 @@ function updateBoard() {
 
 function updateMessage() {
   if (!winner && !tie) {
-    messageEl.textContent = `It's ${turn}'s turn`;
+    messageEl.textContent = `It's your turn, ${turn}.`;
   } else if (!winner && tie) {
     messageEl.textContent = "It's a tie!";
   } else {
-    messageEl.textContent = `Player ${turn} wins!`;
+    messageEl.textContent = `Player ${turn} won!`;
   }
 }
 
@@ -70,9 +70,11 @@ function placePiece(index) {
 }
 
 function checkForWinner() {
-  for (let combo of winningCombos) {
-    const [a, b, c] = combo;
-    if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+ for (let i = 0; i < winningCombos.length; i++) {
+  const a = board[winningCombos[i][0]]
+  const b = board[winningCombos[i][1]]
+  const c = board[winningCombos[i][2]]
+if (board[a] && board[a] === board[b] && board[a] === board[c]) {
       winner = true;
       return;
     }
@@ -86,9 +88,14 @@ function checkForTie() {
 }
 
 function switchPlayerTurn() {
-  if (winner) return;
-  turn = turn === 'X' ? 'O' : 'X';
+if (turn === 'X') {
+  turn = 'O';
+} else {
+  turn = 'X';
 }
+}
+
+
 
 function handleClick(event) {
   const squareIndex = parseInt(event.target.id);

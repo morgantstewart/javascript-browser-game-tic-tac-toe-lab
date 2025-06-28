@@ -1,20 +1,32 @@
-body {
-  background-color: gainsboro;
-  /* Use a system font, if none are available use an available sans-sarif */
-  font-family: system-ui, sans-serif;
-  margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+h1 {
+  text-align: center;
 }
+
+body {
+  background-image: url("https://www.mediafire.com/file/m4r521glllb20ed/Screenshot+2025-06-28+at+12.34.59 AM.png/file");
+  /* Use a system font, if none are available use an available sans-sarif */
+  font-family:'Silkscreen', Times, serif, sans-serif; */
+  margin: 0;
+  text-align: center;
+}
+
 
 .board {
   display: flex;
   flex-wrap: wrap;
-  width: 325px;
+  width: 530px;
+  border: 2px;
+  fill-opacity: (30%);
 }
 
 .sqr {
   width: 30%;
-  aspect-ratio: 1/1;
-  border: 3px solid black;
-  font-size: 64px;
+  aspect-ratio: 1.5/1.5;
+  border: 4px solid black;
+  font-size: 120px;
   text-align: center;
+  background-color:blanchedalmond;
+  fill-opacity: (30%);
 }
