@@ -32,7 +32,7 @@ let board, turn, winner, tie;
 
 /*------------------------ Cached Element References ------------------------*/
 const squareEls = document.querySelectorAll('.sqr');
-const messageEl = document.querySelector("#message");
+const messageEl = document.querySelector('#message');
 const resetBtnEl = document.querySelector('#reset');
 
 /*-------------------------------- Functions --------------------------------*/
@@ -54,7 +54,7 @@ function updateMessage() {
   if (!winner && !tie) {
     messageEl.textContent = `It's your turn, ${turn}.`;
   } else if (!winner && tie) {
-    messageEl.textContent = "It's a tie!";
+    messageEl.textContent = `It's a tie!`;
   } else {
     messageEl.textContent = `Player ${turn} won!`;
   }
